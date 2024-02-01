@@ -2182,7 +2182,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
+        "x": 900,
         "y": 100,
         "wires": []
     },
