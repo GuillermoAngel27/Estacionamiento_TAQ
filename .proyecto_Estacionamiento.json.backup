@@ -1,0 +1,2677 @@
+[
+    {
+        "id": "281fcb369639668d",
+        "type": "tab",
+        "label": "createTicket",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a74a8b3a13ece5db",
+        "type": "tab",
+        "label": "validateOut",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f529c53e9a5aba38",
+        "type": "tab",
+        "label": "Flujo de Desencriptación",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "32d6971d38dc0209",
+        "type": "tab",
+        "label": "fwPruebas",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f369f98bb972f6f5",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6cc861eaf6547193",
+        "type": "tab",
+        "label": "flwMaquinaEstados",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0cd476c06e8fa6b2",
+        "type": "subflow",
+        "name": "subCnnBD",
+        "info": "Conexión con base de datos SCAP",
+        "category": "",
+        "in": [
+            {
+                "x": 358,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "6800462c10826a9c"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 660,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "6800462c10826a9c",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "38350d51ad4eaafe",
+        "type": "subflow",
+        "name": "SubFlw_CargarTabla",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 140,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "29f681c477d38cbf"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5"
+    },
+    {
+        "id": "812ebe6f38e1a602",
+        "type": "subflow",
+        "name": "subFlwBuscaEmpresa",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "df3c07c1637895cc"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 800,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "7a3dd22e952ff033",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#FFF0F0"
+    },
+    {
+        "id": "f6610e3b2387ac5c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#9d009d",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#a91f9b",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#9d009d",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#9d009d",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#e900e9",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#9d009d",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "deep-purple",
+                "accents": "red",
+                "warn": "light-green",
+                "background": "light-green",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "menu",
+            "lockMenu": "false",
+            "allowTempTheme": "none",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 58,
+                "sy": 27,
+                "gx": 6,
+                "gy": 6,
+                "cx": 23,
+                "cy": 34,
+                "px": 12,
+                "py": 12
+            }
+        }
+    },
+    {
+        "id": "83b85919b2dac752",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "192.168.1.72",
+        "port": "3306",
+        "db": "parkingtaq",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "802eaec04a393b82",
+        "type": "ui_tab",
+        "name": "EstacionamientoCompleto",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e9dac18c3e8fef5a",
+        "type": "ui_group",
+        "name": "Create Ticket Normal (Hora)",
+        "tab": "802eaec04a393b82",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8135167c221b806c",
+        "type": "ui_group",
+        "name": "Registro de Tags",
+        "tab": "802eaec04a393b82",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "25b503f9b6a954f4",
+        "type": "ui_group",
+        "name": "Lector Código de Barras",
+        "tab": "802eaec04a393b82",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9eb94414.6a8f78",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM15",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "1000"
+    },
+    {
+        "id": "47bdf02e71f35711",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "/dev/ttyS0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "47dc53baf2c4b5e4",
+        "type": "serial-port",
+        "name": "USB0",
+        "serialport": "/dev/ttyS0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "931188c4fcf02977",
+        "type": "ui_group",
+        "name": "Buttons",
+        "tab": "15b3a67c9e62c8ba",
+        "order": 14,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "20612df8fb62aba8",
+        "type": "ui_group",
+        "name": "Resultado",
+        "tab": "15b3a67c9e62c8ba",
+        "order": 8,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "15b3a67c9e62c8ba",
+        "type": "ui_tab",
+        "name": "PRUEBA DASHBOARD",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6800462c10826a9c",
+        "type": "mysql",
+        "z": "0cd476c06e8fa6b2",
+        "mydb": "83b85919b2dac752",
+        "name": "",
+        "x": 510,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29f681c477d38cbf",
+        "type": "function",
+        "z": "38350d51ad4eaafe",
+        "name": "Query_Busqueda",
+        "func": "//var estatus = msg.payload;\nvar query = `select * from reg_tags order by id desc; `;\n\nmsg.topic = query.toString(); \n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "25122c3bb6d670e4"
+            ]
+        ]
+    },
+    {
+        "id": "f10586f2c7c20ed7",
+        "type": "ui_table",
+        "z": "38350d51ad4eaafe",
+        "group": "8135167c221b806c",
+        "name": "",
+        "order": 2,
+        "width": "6",
+        "height": "5",
+        "columns": [
+            {
+                "field": "id",
+                "title": "ID",
+                "width": "100",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "tipo",
+                "title": "Tipo de Dato",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "num_tag",
+                "title": "Numero Tag",
+                "width": "100",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "fecha",
+                "title": "Fecha Ingreso",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 690,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "25122c3bb6d670e4",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "38350d51ad4eaafe",
+        "name": "",
+        "x": 530,
+        "y": 180,
+        "wires": [
+            [
+                "f10586f2c7c20ed7"
+            ]
+        ]
+    },
+    {
+        "id": "08a775654c9d6588",
+        "type": "function",
+        "z": "812ebe6f38e1a602",
+        "name": "fnBuscaDatosEmpresa",
+        "func": "const now = new Date();\n\n// Formatear la fecha y hora en el formato de MySQL\nconst formattedDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;\n\n\nmsg.topic = `select * from datempre`;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 160,
+        "wires": [
+            [
+                "a2051d9cc7786599"
+            ]
+        ]
+    },
+    {
+        "id": "a2051d9cc7786599",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "812ebe6f38e1a602",
+        "name": "",
+        "x": 850,
+        "y": 160,
+        "wires": [
+            [
+                "551de218c97e025c"
+            ]
+        ]
+    },
+    {
+        "id": "2c969e4bc7ba4e37",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "812ebe6f38e1a602",
+        "name": "",
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "08a775654c9d6588"
+            ]
+        ]
+    },
+    {
+        "id": "df3c07c1637895cc",
+        "type": "function",
+        "z": "812ebe6f38e1a602",
+        "name": "fnLockTable",
+        "func": "\nmsg.topic = `lock table datempre write;`;\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 160,
+        "wires": [
+            [
+                "2c969e4bc7ba4e37"
+            ]
+        ]
+    },
+    {
+        "id": "b2d56863693fbf37",
+        "type": "function",
+        "z": "812ebe6f38e1a602",
+        "name": "fnUnlockTable",
+        "func": "msg.topic = `unlock tables;`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "7a3dd22e952ff033"
+            ]
+        ]
+    },
+    {
+        "id": "7a3dd22e952ff033",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "812ebe6f38e1a602",
+        "name": "",
+        "x": 670,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "551de218c97e025c",
+        "type": "function",
+        "z": "812ebe6f38e1a602",
+        "name": "fnDeclaraVarGlobales",
+        "func": "var str_RFC = msg.payload && msg.payload[0] && msg.payload[0].rfc;\nvar str_nombreEmp = msg.payload && msg.payload[0] && msg.payload[0].descrip;\n\nglobal.set(\"gblstr_RFC\",str_RFC);\nglobal.set(\"gblstr_nombreEmp\", str_nombreEmp);\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "b2d56863693fbf37",
+                "915473b8701ba9dc"
+            ]
+        ]
+    },
+    {
+        "id": "915473b8701ba9dc",
+        "type": "debug",
+        "z": "812ebe6f38e1a602",
+        "name": "debug 45",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d4fdd47b1cd07d69",
+        "type": "ui_button",
+        "z": "281fcb369639668d",
+        "name": "",
+        "group": "e9dac18c3e8fef5a",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Entrada 1",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "green",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "",
+        "topicType": "str",
+        "x": 600,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "925923a07dbba083",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnInsertarFolio",
+        "func": "const now = new Date();\n\n// Formatear la fecha y hora en el formato de MySQL\nconst formattedDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;\n\n\nmsg.topic = `INSERT INTO folios_est (fecha_ingreso,fecha_fin,dias_est,costo,tipo_folio) \n VALUES ('${formattedDate}','1901-01-01 23:59:59',0,0,'NORMAL');`;\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 220,
+        "wires": [
+            [
+                "85e5183e6ac88253"
+            ]
+        ]
+    },
+    {
+        "id": "85e5183e6ac88253",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "281fcb369639668d",
+        "name": "",
+        "x": 850,
+        "y": 220,
+        "wires": [
+            [
+                "bc5fe8d98917d944"
+            ]
+        ]
+    },
+    {
+        "id": "f2ee0ff958c731dc",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "281fcb369639668d",
+        "name": "",
+        "x": 510,
+        "y": 220,
+        "wires": [
+            [
+                "925923a07dbba083"
+            ]
+        ]
+    },
+    {
+        "id": "e4990b66fbaba252",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnLockTable",
+        "func": "var loop1 = global.get(\"glbLoop1\");\nvar boton0 = global.get(\"glbBoton0\");\n\nif (loop1 === 1 && boton0 === 0) {\n    // Ambas condiciones son verdaderas, realiza la acción\n    msg.topic = \"lock table folios_est write;\";\n    msg.payload = global.get(\"glbBoton0\");\n    return msg;\n} else {\n    // En caso contrario, no realizar la acción\n    return null; // Puedes ajustar esto según tus necesidades\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "f2ee0ff958c731dc"
+            ]
+        ]
+    },
+    {
+        "id": "7440f9cdc70f3172",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnUnlockTable",
+        "func": "msg.topic = `unlock tables;`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 260,
+        "wires": [
+            [
+                "953b01f79944ac7a"
+            ]
+        ]
+    },
+    {
+        "id": "953b01f79944ac7a",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "281fcb369639668d",
+        "name": "",
+        "x": 690,
+        "y": 260,
+        "wires": [
+            [
+                "dce0f301aead2beb"
+            ]
+        ]
+    },
+    {
+        "id": "56f27785929b0483",
+        "type": "inject",
+        "z": "281fcb369639668d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 450,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43e8d042d6934d19",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnDeclaraVarGlobales",
+        "func": "var numFolio = msg.payload && msg.payload[0] && msg.payload[0].folio;\nvar str_Fecha = msg.payload && msg.payload[0] && msg.payload[0].fecha_ingreso;\n\nglobal.set(\"gblnumFolio\",numFolio);\nglobal.set(\"gblfecha_ingreso\",str_Fecha);\n\nmsg.topic = 'Entrada 1: Se creo el folio ' + global.get(\"gblnumFolio\")\nmsg.folio =  global.get(\"gblnumFolio\")\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 260,
+        "wires": [
+            [
+                "7440f9cdc70f3172"
+            ]
+        ]
+    },
+    {
+        "id": "bc5fe8d98917d944",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnBuscarFolio",
+        "func": "msg.topic = `select * from folios_est order by folio desc limit 1;`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 220,
+        "wires": [
+            [
+                "4c0d41d424520759"
+            ]
+        ]
+    },
+    {
+        "id": "4c0d41d424520759",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "281fcb369639668d",
+        "name": "",
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "43e8d042d6934d19"
+            ]
+        ]
+    },
+    {
+        "id": "20ec4126a9b8aaf7",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnEPL",
+        "func": "var strFecha = msg.fechaIngreso;\n\nfunction generateCode128Command(data, barWidthMultiplier = 2) {\n    // Asegurarse de que el dato sea una cadena de texto\n    const dataString = String(data);\n\n    // Eliminar cualquier carácter de retorno de carro\n    const cleanedData = dataString.replace(/\\n/g, '');\n\n    // Verificar que el dato tenga 8 dígitos numéricos\n    if (/^\\d{8}$/.test(cleanedData)) {\n        // Comando para ajustar el ancho del código de barras\n        const setBarcodeWidthCommand = Buffer.from([0x1D, 0x77, barWidthMultiplier]);\n\n        // Comando para generar el código de barras Code 128\n        const code128Command = Buffer.concat([\n            Buffer.from([0x1D, 0x6B, 0x49, cleanedData.length + 2]),  // Longitud de cadena + 2 para el control de modo y el carácter de inicio\n            Buffer.from(\"\\x7B\\x42\" + cleanedData + \"\\x00\")  // Datos del código de barras + carácter de finalización\n        ]);\n\n        return Buffer.concat([setBarcodeWidthCommand, code128Command]);\n    } else {\n        console.error(\"Error: El código de barras debe tener 8 dígitos numéricos.\");\n        return null;\n    }\n}\n// Obtén el código de barras y el folio desde el mensaje\nvar strCodBar = msg.folio;\nvar z = String(strCodBar).padStart(8, '0');\nconst codigoDeBarras = z || \"DefaultCodigoDeBarras\"; // Utiliza un valor predeterminado si no se proporciona\nconst folio = msg.folio.folio || \"DefaultFolio\"; // Utiliza un valor predeterminado si no se proporciona\nconst barWidthMultiplier = 2; // Puedes ajustar según tus necesidades\n\n// Llama a la función para generar el comando Code 128\nconst code128Command = generateCode128Command(codigoDeBarras, barWidthMultiplier);\n\n\nif (code128Command !== null) {\n    msg.payload = Buffer.concat([\n    Buffer.from([0x1B, 0x40]), // Inicializar la impresora\n\n    Buffer.from([0x1D, 0x57, 0x50]), // GS W n (50 es 80mm)\n\n    Buffer.from([0x1B, 0x21, 0x18]), // Ajustar tamaño de caracteres (11)\n    Buffer.from([0x1B, 0x45, 0x01]), // Negritas activadas\n    Buffer.from(\"RFC: \"+global.get(\"gblstr_RFC\")+\"\\n\", 'latin1'),\n    Buffer.from(\"Dir: \"+global.get(\"gblstr_nombreEmp\")+\"\\n\", 'latin1'),\n    Buffer.from(\"Estacionamiento tipo B\\n\", 'ascii'),\n    Buffer.from([0x1B, 0x45, 0x00]), // Negritas desactivadas\n   \n    Buffer.from(\"-\".repeat(45), 'latin1'), // Linea recta\n    Buffer.from(\"\\n\", 'latin1'),\n\n    Buffer.from([0x1B, 0x21, 0x06]), // Ajustar tamaño de caracteres (8)\n\n        Buffer.from(\"Tarifa: Boleto sellado\\n\", 'ascii'),\n        Buffer.from(\"- 2 horas gratuitas\\n\", 'ascii'),\n        Buffer.from(\"- 3ra hora: $10 pesos\\n\", 'ascii'),\n        Buffer.from(\"- $3 cada 15 minutos o fraccion\\n\", 'ascii'),\n\n\n    Buffer.from([0x1B, 0x21, 0x04]), // Ajustar tamaño de caracteres (05)\n    Buffer.from(\"-\".repeat(45), 'latin1'), // Linea recta\n    Buffer.from(\"\\n\", 'latin1'),\n \n    Buffer.from([0x1B, 0x21, 0x06]), // Ajustar tamaño de caracteres (8)\n\n        Buffer.from(\"Tarifa: Boleto sin sello\\n\", 'latin1'),\n        Buffer.from(\"- $22 primera hora\\n\", 'latin1'),\n        Buffer.from(\"- 3ra hora: $10 pesos\\n\", 'latin1'),\n\n\n    Buffer.from([0x1B, 0x21, 0x04]), // Ajustar tamaño de caracteres (05)\n    Buffer.from(\"-\".repeat(45), 'latin1'), // Linea recta\n   \n    Buffer.from(\"\\n\", 'latin1'),\n    Buffer.from([0x1B, 0x21, 0x06]), // Ajustar tamaño de caracteres (8)\n\n        Buffer.from(\"Horario: 24 horas al dia\\n\", 'latin1'),\n\n\n    Buffer.from([0x1B, 0x21, 0x10]), // Ajustar tamaño de caracteres (05)\n    Buffer.from(\"-\".repeat(45), 'latin1'), // Linea recta\n    Buffer.from(\"\\n\", 'latin1'),\n        Buffer.from(\"Fecha: \" + strFecha + \"\\n\", 'ascii'),\n        Buffer.from(\"Folio: \" + z + \"\\n\\n\", 'ascii'),\n    Buffer.from([0x1B, 0x61, 0x01]),\n    code128Command,\n    Buffer.from(\"\\n\"),\n    \n    Buffer.from([0x1B, 0x21, 0x05]), // Ajustar tamaño de caracteres (05)\n    Buffer.from(\"-\".repeat(45), 'latin1'), // Linea recta\n    Buffer.from(\"\\n\", 'latin1'),\n\n\n\n    // Pie de página\n    Buffer.from([0x1B, 0x21, 0x08]), // Ajustar tamaño de caracteres (05)\n    Buffer.from(\"FAVOR DE PAGAR ANTES DE SALIR\\n\", 'ascii'),\n    Buffer.from([0x1B, 0x64, 0x04]), // Avanzar 4 líneas antes de cortar (ajustado según necesidades)\n    Buffer.from([0x1D, 0x56, 0x01]), // Cortar papel\n    Buffer.from([0x1B, 0x40]) // Inicializar la impresora nuevamente\n]);\nreturn msg;\n} else {\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "add326915582c556"
+            ]
+        ]
+    },
+    {
+        "id": "20cc5d094683d72e",
+        "type": "comment",
+        "z": "281fcb369639668d",
+        "name": "Flujo de la entrada 1",
+        "info": "",
+        "x": 150,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "add326915582c556",
+        "type": "file",
+        "z": "281fcb369639668d",
+        "name": "Escribir en Archivo",
+        "filename": "/home/taq/Documentos/imprimeTicket/imprime.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 290,
+        "y": 300,
+        "wires": [
+            [
+                "495baad017aff5e3",
+                "b823c3e05096dea8"
+            ]
+        ]
+    },
+    {
+        "id": "dce0f301aead2beb",
+        "type": "subflow:812ebe6f38e1a602",
+        "z": "281fcb369639668d",
+        "name": "",
+        "x": 900,
+        "y": 260,
+        "wires": [
+            [
+                "eb07ce8f.b287b"
+            ]
+        ]
+    },
+    {
+        "id": "eb07ce8f.b287b",
+        "type": "moment",
+        "z": "281fcb369639668d",
+        "name": "",
+        "topic": "",
+        "input": "gblfecha_ingreso",
+        "inputType": "global",
+        "inTz": "America/New_York",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "DD-MMMM-YYYY HH:mm",
+        "locale": "es",
+        "output": "fechaIngreso",
+        "outputType": "msg",
+        "outTz": "America/New_York",
+        "x": 1120,
+        "y": 260,
+        "wires": [
+            [
+                "20ec4126a9b8aaf7"
+            ]
+        ]
+    },
+    {
+        "id": "dca9970223ba096b",
+        "type": "rpi-gpio in",
+        "z": "281fcb369639668d",
+        "name": "BotonActivar",
+        "pin": "26",
+        "intype": "up",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "11580dc80e317185"
+            ]
+        ]
+    },
+    {
+        "id": "11580dc80e317185",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnValidaBotonActivado",
+        "func": "if(msg.payload== 0){\n  var boton0=0;\n  global.set(\"glbBoton0\",boton0)\n}else{\n  var boton0=1;\n  global.set(\"glbBoton0\",boton0)\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "e4990b66fbaba252"
+            ]
+        ]
+    },
+    {
+        "id": "b823c3e05096dea8",
+        "type": "delay",
+        "z": "281fcb369639668d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 720,
+        "y": 300,
+        "wires": [
+            [
+                "b2a9c573586a364f"
+            ]
+        ]
+    },
+    {
+        "id": "841c840d082444f1",
+        "type": "rpi-gpio out",
+        "z": "281fcb369639668d",
+        "name": "Relay 12v",
+        "pin": "21",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1260,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b2a9c573586a364f",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "function 34",
+        "func": "var loop1 = global.get(\"glbLoop1\");\nvar boton0 = global.get(\"glbBoton0\");\n\nif (loop1 === 1 && boton0 === 1) {\n        msg.payload= false;\n    return msg;\n} else {\n    msg.payload= true;\n    return msg; \n};\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 300,
+        "wires": [
+            [
+                "a1d89f39261f2421",
+                "67dbb793e441d796"
+            ]
+        ]
+    },
+    {
+        "id": "010e530e3fa5b067",
+        "type": "inject",
+        "z": "281fcb369639668d",
+        "name": "Apagar Relé 1",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 1150,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fdbcf4300fc1edd9",
+        "type": "inject",
+        "z": "281fcb369639668d",
+        "name": "Encender Relé 1",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 1160,
+        "y": 540,
+        "wires": [
+            [
+                "841c840d082444f1"
+            ]
+        ]
+    },
+    {
+        "id": "b83a896e29705ff3",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "function 35",
+        "func": "var loop2 = global.get(\"glbLoop2\");\nvar boton0 = global.get(\"glbBoton0\");\n\nif (loop2 === 1 && boton0 === 1) {\n    // Ambas condiciones son verdaderas, realiza la acción\n       \n        msg.payload= true;\n    return msg;\n} else {\n    // En caso contrario, no realizar la acción\n    msg.payload= false;\n    return msg; // Puedes ajustar esto según tus necesidades\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67cfdcfc822b482d",
+        "type": "rpi-gpio in",
+        "z": "281fcb369639668d",
+        "name": "Loop2",
+        "pin": "5",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 150,
+        "y": 700,
+        "wires": [
+            [
+                "2527124861846b2b"
+            ]
+        ]
+    },
+    {
+        "id": "2527124861846b2b",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnValidaBotonActivado",
+        "func": "var loop2;\nif(msg.payload== 0){\n  loop2=0;\n  global.set(\"glbLoop2\",loop2)\n  msg.payload = \"LOOP2 Desactivado \"+ global.get(\"glbLoop2\");\n}else{\n  loop2=1;\n  global.set(\"glbLoop2\",loop2)\n  msg.payload = \"LOOP2 Activado \" + global.get(\"glbLoop2\");\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 700,
+        "wires": [
+            [
+                "b83a896e29705ff3",
+                "e6976b96c4c94a9c",
+                "41a2d6f5bc3895b2"
+            ]
+        ]
+    },
+    {
+        "id": "e6976b96c4c94a9c",
+        "type": "debug",
+        "z": "281fcb369639668d",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a1d89f39261f2421",
+        "type": "delay",
+        "z": "281fcb369639668d",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "8",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 120,
+        "y": 420,
+        "wires": [
+            [
+                "5335d464f2c66d48"
+            ]
+        ]
+    },
+    {
+        "id": "495baad017aff5e3",
+        "type": "debug",
+        "z": "281fcb369639668d",
+        "name": "debug 50",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b2eb298b35660566",
+        "type": "exec",
+        "z": "281fcb369639668d",
+        "command": "lp /home/taq/Documentos/imprimeTicket/imprime.txt",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "execImprime.bat",
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5335d464f2c66d48",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnValidaLoop2",
+        "func": "var loop2 = global.get(\"glbLoop2\");\nvar boton0 = global.get(\"glbBoton0\");\n\nif (loop2 == 1) {\n        msg.payload= false;\n        msg.salid= \"Desactiva Relay\";\n} else {\n    msg.payload= true;\n    msg.salid= \"Reinicia Valores\";\n};\n  return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 420,
+        "wires": [
+            [
+                "61a8ecdfa08e8eed",
+                "d73e0e3383d5d50c",
+                "73133c508a71f65f"
+            ]
+        ]
+    },
+    {
+        "id": "61a8ecdfa08e8eed",
+        "type": "debug",
+        "z": "281fcb369639668d",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "salid",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6eb3b21c141371bc",
+        "type": "link in",
+        "z": "281fcb369639668d",
+        "name": "link in 1",
+        "links": [
+            "67dbb793e441d796",
+            "d73e0e3383d5d50c"
+        ],
+        "x": 1095,
+        "y": 380,
+        "wires": [
+            [
+                "841c840d082444f1"
+            ]
+        ]
+    },
+    {
+        "id": "67dbb793e441d796",
+        "type": "link out",
+        "z": "281fcb369639668d",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "6eb3b21c141371bc"
+        ],
+        "x": 1085,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d73e0e3383d5d50c",
+        "type": "link out",
+        "z": "281fcb369639668d",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "6eb3b21c141371bc"
+        ],
+        "x": 585,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "41a2d6f5bc3895b2",
+        "type": "delay",
+        "z": "281fcb369639668d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 320,
+        "y": 620,
+        "wires": [
+            [
+                "5335d464f2c66d48"
+            ]
+        ]
+    },
+    {
+        "id": "73133c508a71f65f",
+        "type": "function",
+        "z": "281fcb369639668d",
+        "name": "fnReiniciaValor",
+        "func": "  msg.payload = 0;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "901207d0e42b28e5",
+        "type": "inject",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "button_10",
+        "x": 200,
+        "y": 2140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "96bead2e3b38cb61",
+        "type": "inject",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "button_5",
+        "x": 200,
+        "y": 2180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd020f8963bd4c4f",
+        "type": "inject",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "button_2",
+        "x": 200,
+        "y": 2220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a6c725933b089769",
+        "type": "inject",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "button_1",
+        "x": 200,
+        "y": 2260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0501cfd5f978df41",
+        "type": "function",
+        "z": "a74a8b3a13ece5db",
+        "name": "fnSumarMonedas",
+        "func": "let montoAcumulado = global.get(\"montoAcumulado\") || 0;\n\nswitch (msg.payload) {\n    case \"button_10\":\n        montoAcumulado += 10;\n        break;\n    case \"button_5\":\n        montoAcumulado += 5;\n        break;\n    case \"button_2\":\n        montoAcumulado += 2;\n        break;\n    case \"button_1\":\n        montoAcumulado += 1;\n        break;\n}\n\nglobal.set(\"montoAcumulado\", montoAcumulado);\n\nmsg.montoAcumulado = montoAcumulado;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 2280,
+        "wires": [
+            [
+                "cea26a10fe7deeaa",
+                "808a09f890d907d8"
+            ]
+        ]
+    },
+    {
+        "id": "cea26a10fe7deeaa",
+        "type": "debug",
+        "z": "a74a8b3a13ece5db",
+        "name": "debug monedasSumaTotal",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "montoAcumulado",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 2140,
+        "wires": []
+    },
+    {
+        "id": "3e489733116bde47",
+        "type": "change",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "montoAcumulado",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1140,
+        "y": 2340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44fc41ea426f7e44",
+        "type": "delay",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "6",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 920,
+        "y": 2340,
+        "wires": [
+            [
+                "3e489733116bde47"
+            ]
+        ]
+    },
+    {
+        "id": "3ce786711f55f5ea",
+        "type": "function",
+        "z": "a74a8b3a13ece5db",
+        "name": "Cobrar",
+        "func": "var montoAcumulado = global.get('montoAcumulado');\nvar valorCambio;\n\nvar cambio = montoAcumulado - 10;\n\nif (cambio > 0) {\n    valorCambio = cambio;\n    montoAcumulado = 0;\n} else if (cambio < 0) {\n    valorCambio = 0;\n} else if (cambio === 0) {\n    valorCambio = \"Cobro Correcto! \" + cambio;\n}\n\nglobal.set(\"valorCambio\", valorCambio);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 2280,
+        "wires": [
+            [
+                "44fc41ea426f7e44",
+                "227257c4cd62b6bd"
+            ]
+        ]
+    },
+    {
+        "id": "646f489f6014903a",
+        "type": "debug",
+        "z": "a74a8b3a13ece5db",
+        "name": "cambio",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "cambio",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 2240,
+        "wires": []
+    },
+    {
+        "id": "8ca0704449e96c09",
+        "type": "delay",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 920,
+        "y": 2080,
+        "wires": [
+            [
+                "646f489f6014903a"
+            ]
+        ]
+    },
+    {
+        "id": "227257c4cd62b6bd",
+        "type": "function",
+        "z": "a74a8b3a13ece5db",
+        "name": "function 33",
+        "func": "var valorCambio = global.get(\"valorCambio\");\n\nmsg.cambio= valorCambio;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 2220,
+        "wires": [
+            [
+                "646f489f6014903a"
+            ]
+        ]
+    },
+    {
+        "id": "79f3dd6f6362a41d",
+        "type": "debug",
+        "z": "a74a8b3a13ece5db",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 2380,
+        "wires": []
+    },
+    {
+        "id": "808a09f890d907d8",
+        "type": "delay",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 2280,
+        "wires": [
+            [
+                "3ce786711f55f5ea"
+            ]
+        ]
+    },
+    {
+        "id": "054ce465507e0b73",
+        "type": "debug",
+        "z": "f529c53e9a5aba38",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 830,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1a2b3c4d5e6f",
+        "type": "serial in",
+        "z": "f529c53e9a5aba38",
+        "d": true,
+        "name": "usb0",
+        "serial": "47bdf02e71f35711",
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "f320a7ae9bab2e47",
+                "e232b2465873a5ca",
+                "3a4b5c6d7e8f"
+            ]
+        ]
+    },
+    {
+        "id": "a271f512cffc7fad",
+        "type": "function",
+        "z": "f529c53e9a5aba38",
+        "name": "fnQuery",
+        "func": "var tag ;\nif (msg.payload !==undefined ){\n    tag= msg.payload;\n     msg.topic=`insert into reg_tags (num_tag,fecha,tipo) values('${tag}',now(),'TAG');`;\n}else{\n     msg.payload=\"Error de Guardado\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 220,
+        "wires": [
+            [
+                "028f74a0e58df18d"
+            ]
+        ]
+    },
+    {
+        "id": "028f74a0e58df18d",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "f529c53e9a5aba38",
+        "name": "",
+        "x": 670,
+        "y": 220,
+        "wires": [
+            [
+                "054ce465507e0b73",
+                "91c735829c759adf"
+            ]
+        ]
+    },
+    {
+        "id": "f320a7ae9bab2e47",
+        "type": "function",
+        "z": "f529c53e9a5aba38",
+        "name": "Decodificar",
+        "func": "// Función para decodificar\nfunction decodifica(acces) {\n    let codigo = '';\n    let no_acces = '';\n    for (let ii = 5; ii <= 11; ii++) {\n        codigo = acces.charAt(ii);\n        no_acces += val_binario(codigo);\n    }\n    codigo = no_acces.substring(11, 27);\n    return val_decimal(codigo);\n}\n\n// Función para convertir a binario\nfunction val_binario(char_) {\n    let val_binario = '0000';\n    switch (char_) {\n        case '0':\n            val_binario = '0000';\n            break;\n        case '1':\n            val_binario = '0001';\n            break;\n        case '2':\n            val_binario = '0010';\n            break;\n        case '3':\n            val_binario = '0011';\n            break;\n        case '4':\n            val_binario = '0100';\n            break;\n        case '5':\n            val_binario = '0101';\n            break;\n        case '6':\n            val_binario = '0110';\n            break;\n        case '7':\n            val_binario = '0111';\n            break;\n        case '8':\n            val_binario = '1000';\n            break;\n        case '9':\n            val_binario = '1001';\n            break;\n        case 'A':\n            val_binario = '1010';\n            break;\n        case 'B':\n            val_binario = '1011';\n            break;\n        case 'C':\n            val_binario = '1100';\n            break;\n        case 'D':\n            val_binario = '1101';\n            break;\n        case 'E':\n            val_binario = '1110';\n            break;\n        case 'F':\n            val_binario = '1111';\n            break;\n    }\n    return val_binario;\n}\n\n// Función para convertir a decimal\nfunction val_decimal(que_val) {\n    let val_binario = 1;\n    let val_decimal = 0;\n    for (let ii = que_val.length - 1; ii >= 0; ii--) {\n        val_decimal += parseInt(que_val.charAt(ii)) * val_binario;\n        val_binario *= 2;\n    }\n    return val_decimal;\n}\n\n// Ejemplo de uso\nlet acces = msg.payload;\nlet resultado = decodifica(acces);\n\n// Envía el resultado a la consola de debug\nnode.send({ payload: resultado });",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "a271f512cffc7fad"
+            ]
+        ]
+    },
+    {
+        "id": "3a4b5c6d7e8f",
+        "type": "debug",
+        "z": "f529c53e9a5aba38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e232b2465873a5ca",
+        "type": "ui_text",
+        "z": "f529c53e9a5aba38",
+        "group": "8135167c221b806c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Numero de Tag:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 360,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f59cd5b2ab06f590",
+        "type": "ui_text",
+        "z": "f529c53e9a5aba38",
+        "group": "25b503f9b6a954f4",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Codigo de Barras:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 370,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "2d8b4c29f6cfe335",
+        "type": "serial in",
+        "z": "f529c53e9a5aba38",
+        "name": "USB0",
+        "serial": "47dc53baf2c4b5e4",
+        "x": 90,
+        "y": 480,
+        "wires": [
+            [
+                "f59cd5b2ab06f590",
+                "a15be76272800b46",
+                "70cb46d153314cb5"
+            ]
+        ]
+    },
+    {
+        "id": "a15be76272800b46",
+        "type": "function",
+        "z": "f529c53e9a5aba38",
+        "name": "fnQuery",
+        "func": "var tag ;\nif (msg.payload !==undefined ){\n    tag= msg.payload;\n     msg.topic=`insert into reg_tags (num_tag,fecha,tipo) values('${tag}',now(),'CODIGO_BARRAS');`;\n}else{\n     msg.payload=\"Error de Guardado\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 500,
+        "wires": [
+            [
+                "7bda4ac316532683"
+            ]
+        ]
+    },
+    {
+        "id": "7bda4ac316532683",
+        "type": "subflow:0cd476c06e8fa6b2",
+        "z": "f529c53e9a5aba38",
+        "name": "",
+        "x": 510,
+        "y": 500,
+        "wires": [
+            [
+                "373afe371e3f68bc",
+                "91c735829c759adf"
+            ]
+        ]
+    },
+    {
+        "id": "373afe371e3f68bc",
+        "type": "debug",
+        "z": "f529c53e9a5aba38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "145f030969ec6a34",
+        "type": "comment",
+        "z": "f529c53e9a5aba38",
+        "name": "LECTURA DE TAGS DE RFID",
+        "info": "",
+        "x": 200,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8f1e1a405bcece58",
+        "type": "comment",
+        "z": "f529c53e9a5aba38",
+        "name": "LECTURA DE CODIGOS DE BARRAS",
+        "info": "",
+        "x": 190,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "70cb46d153314cb5",
+        "type": "debug",
+        "z": "f529c53e9a5aba38",
+        "name": "debug 42",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "91c735829c759adf",
+        "type": "subflow:38350d51ad4eaafe",
+        "z": "f529c53e9a5aba38",
+        "name": "",
+        "x": 900,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "69b54ecfb0916129",
+        "type": "file",
+        "z": "32d6971d38dc0209",
+        "name": "Escribir en Archivo",
+        "filename": "/home/taq/Documentos/imprimeTicket/imprime.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 610,
+        "y": 160,
+        "wires": [
+            [
+                "968ea0cd8e3d0cc8"
+            ]
+        ]
+    },
+    {
+        "id": "968ea0cd8e3d0cc8",
+        "type": "exec",
+        "z": "32d6971d38dc0209",
+        "command": "lp /home/taq/Documentos/imprimeTicket/imprime.txt",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "execImprime.bat",
+        "x": 840,
+        "y": 160,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "35351631d908da92",
+        "type": "function",
+        "z": "32d6971d38dc0209",
+        "name": "generateCode128Command",
+        "func": "// Definir la función para generar el comando Code 128\nfunction generateCode128Command(data, barWidthMultiplier = 2) {\n    // Asegurarse de que el dato sea una cadena de texto\n    const dataString = String(data);\n\n    // Eliminar cualquier carácter de retorno de carro\n    const cleanedData = dataString.replace(/\\n/g, '');\n\n    // Verificar que el dato tenga 8 dígitos numéricos\n    if (/^\\d{8}$/.test(cleanedData)) {\n        // Comando para ajustar el ancho del código de barras\n        const setBarcodeWidthCommand = Buffer.from([0x1D, 0x77, barWidthMultiplier]);\n\n        // Comando para generar el código de barras Code 128\n        const code128Command = Buffer.concat([\n            Buffer.from([0x1D, 0x6B, 0x49, cleanedData.length + 2]),  // Longitud de cadena + 2 para el control de modo y el carácter de inicio\n            Buffer.from(\"\\x7B\\x42\" + cleanedData + \"\\x00\")  // Datos del código de barras + carácter de finalización\n        ]);\n\n        return Buffer.concat([setBarcodeWidthCommand, code128Command]);\n    } else {\n        console.error(\"Error: El código de barras debe tener 8 dígitos numéricos.\");\n        return null;\n    }\n}\n\n// Ejemplo de uso con un código de barras que incluye ceros a la izquierda y ajuste de tamaño\nconst codigoDeBarras = '00415319';\nconst barWidthMultiplier = 2; // Ajusta según tus necesidades\n\nconst code128Command = generateCode128Command(codigoDeBarras, barWidthMultiplier);\n\nif (code128Command !== null) {\n    msg.payload = Buffer.concat([\n    Buffer.from([0x1B, 0x40]), // Inicializar la impresora\n\n    Buffer.from([0x1D, 0x57, 0x50]), // GS W n (50 es 80mm)\n\n    Buffer.from([0x1B, 0x21, 0x11]), // Ajustar tamaño de caracteres (11)\n    Buffer.from([0x1B, 0x45, 0x01]), // Negritas activadas\n    Buffer.from(\"TERMINAL DE AUTOBUSES DE TEQUISQUIAPAN\\n\", 'latin1'),\n    Buffer.from([0x1B, 0x45, 0x00]), // Negritas desactivadas\n    Buffer.from(\"\\n\", 'latin1'),\n\n\n    Buffer.from([0x1B, 0x21, 0x05]), // Ajustar tamaño de caracteres (05)\n    Buffer.from(\"Para cualquier aclaracion conserve este ticket como comprobante de su servicio\\n\", 'ascii'),\n   // Buffer.from(\"conserve este ticket como\\n\", 'ascii'),\n    //Buffer.from(\"comprobante de su servicio\\n\", 'ascii'),\n\n\n    Buffer.from(\"-\".repeat(40), 'latin1'), // Linea recta\n    Buffer.from(\"\\n\", 'latin1'),\n\n    Buffer.from([0x1B, 0x21, 0x08]), // Ajustar tamaño de caracteres (08)\n    Buffer.from(\"Fecha: 27-10-2023 10:51:05\\n\", 'ascii'),\n\n    Buffer.from([0x1B, 0x21, 0x10]), // Ajustar tamaño de caracteres (10)\n    Buffer.from([0x1B, 0x45, 0x01]), // Negritas activadas\n    Buffer.from(\"Local: 004\\n\", 'ascii'),\n    Buffer.from(\"Caja: 000001\\n\", 'ascii'),\n    Buffer.from(\"Folio: 005319\\n\", 'ascii'),\n    Buffer.from(\"Importe: 7.00\\n\", 'ascii'),\n    Buffer.from([0x1B, 0x45, 0x00]), // Negritas desactivadas\n\n    Buffer.from([0x1B, 0x21, 0x05]), // Ajustar tamaño de caracteres (05)\n    Buffer.from(\"-\".repeat(40), 'latin1'), // Linea recta\n    Buffer.from(\"\\n\\n\\n\", 'latin1'),\n\n    Buffer.from([0x1B, 0x61, 0x01]),\n    code128Command,\n    Buffer.from(\"\\n\"),\n\n    Buffer.from([0x1B, 0x21, 0x08]), // Ajustar tamaño de caracteres (08)\n    Buffer.from(\"\"+codigoDeBarras+\"\\n\", 'ascii'),\n    // Agregar espacio entre el código de barras y el pie de página\n    Buffer.from(\"\\n\"),\n\n    // Pie de página\n    Buffer.from([0x1B, 0x21, 0x05]), // Ajustar tamaño de caracteres (05)\n    Buffer.from(\"¡Gracias por su Visita!\\n\", 'ascii'),\n    Buffer.from([0x1B, 0x64, 0x04]), // Avanzar 4 líneas antes de cortar (ajustado según necesidades)\n    Buffer.from([0x1D, 0x56, 0x01]), // Cortar papel\n    Buffer.from([0x1B, 0x40]) // Inicializar la impresora nuevamente\n]);\nreturn msg;\n} else {\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "56792d8c1fefc41f",
+                "69b54ecfb0916129"
+            ]
+        ]
+    },
+    {
+        "id": "34b4ad619fde0b13",
+        "type": "inject",
+        "z": "32d6971d38dc0209",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "35351631d908da92"
+            ]
+        ]
+    },
+    {
+        "id": "56792d8c1fefc41f",
+        "type": "serial out",
+        "z": "32d6971d38dc0209",
+        "name": "Serial Out (COM15)",
+        "serial": "9eb94414.6a8f78",
+        "x": 640,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d830bc19af82a1a7",
+        "type": "comment",
+        "z": "32d6971d38dc0209",
+        "name": "FLUJO PARA GENERAR CODIGO DE BARRAS E IMPRIMIR A LA IMPRESORA PREDETERMINADA ",
+        "info": "",
+        "x": 390,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1ebb30b98a0641ff",
+        "type": "IssueDashboard",
+        "z": "32d6971d38dc0209",
+        "x": 0,
+        "y": 0,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b65c0351488ac6d2",
+        "type": "debug",
+        "z": "f369f98bb972f6f5",
+        "name": "debug 48",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "92b3942ebddbd8af",
+        "type": "rpi-gpio in",
+        "z": "f369f98bb972f6f5",
+        "name": "Loop1",
+        "pin": "18",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "58da39f7e6fb6849"
+            ]
+        ]
+    },
+    {
+        "id": "58da39f7e6fb6849",
+        "type": "function",
+        "z": "f369f98bb972f6f5",
+        "name": "fnValidaLoop1",
+        "func": "var loop1;\nif(msg.payload== 0){\n  loop1=0;\n  global.set(\"glbLoop1\",loop1)\n  msg.payload = \"LOOP1 \"+ global.get(\"glbLoop1\");\n}else{\n  loop1=1;\n  global.set(\"glbLoop1\",loop1)\n  msg.payload = \"LOOP1 \" + global.get(\"glbLoop1\");\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [
+                "b65c0351488ac6d2"
+            ]
+        ]
+    },
+    {
+        "id": "af56b57a2eda1521",
+        "type": "debug",
+        "z": "6cc861eaf6547193",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b8928594f4b872f1",
+        "type": "function",
+        "z": "6cc861eaf6547193",
+        "name": "",
+        "func": "\nmsg.payload= global.get(\"num1\") ;\n\nvar numero = global.get(\"num1\") ;\nvar total;\n\n total= numero + 10;\n \n msg.payload= total;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 60,
+        "wires": [
+            [
+                "af56b57a2eda1521"
+            ]
+        ]
+    },
+    {
+        "id": "7e4b86e20b070c33",
+        "type": "inject",
+        "z": "6cc861eaf6547193",
+        "name": "inData",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 60,
+        "wires": [
+            [
+                "b8928594f4b872f1"
+            ]
+        ]
+    },
+    {
+        "id": "177401c69504b42b",
+        "type": "switch",
+        "z": "6cc861eaf6547193",
+        "name": "",
+        "property": "payload1",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "caso 1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "caso 2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "caso 3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "caso 4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "caso 5",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "fb8743265b71020f"
+            ],
+            [
+                "7819202ba16fd92c"
+            ],
+            [
+                "82d579c286c2b4ae"
+            ],
+            [
+                "7e12cafe9ca7cfa9"
+            ],
+            [
+                "7ad2987051a9f2b4"
+            ]
+        ]
+    },
+    {
+        "id": "0634fde40860fed4",
+        "type": "link in",
+        "z": "6cc861eaf6547193",
+        "name": "enlaceSwitchCase-In",
+        "links": [
+            "ad189bfd1df748e0"
+        ],
+        "x": 75,
+        "y": 380,
+        "wires": [
+            [
+                "980db0b9501f61ad"
+            ]
+        ]
+    },
+    {
+        "id": "ec8d966e6b740ab7",
+        "type": "debug",
+        "z": "6cc861eaf6547193",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload1",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ad189bfd1df748e0",
+        "type": "link out",
+        "z": "6cc861eaf6547193",
+        "name": "enlaceSwitchCase-Out",
+        "mode": "link",
+        "links": [
+            "0634fde40860fed4"
+        ],
+        "x": 945,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "fb8743265b71020f",
+        "type": "function",
+        "z": "6cc861eaf6547193",
+        "name": "caso 1",
+        "func": "if (msg.payload1==\"caso 1\"){\n    msg.payload1 = \"caso 2\"\n}else{\n    msg.payload1 = \"caso 5\"\n}\nmsg.payload= true;\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "ec8d966e6b740ab7",
+                "f40b844c3f45efdd",
+                "676d72483d27da6f",
+                "d4c56538bba46603"
+            ]
+        ]
+    },
+    {
+        "id": "7819202ba16fd92c",
+        "type": "function",
+        "z": "6cc861eaf6547193",
+        "name": "caso 2",
+        "func": "msg.payload1 = \"caso 3\"\nmsg.payload= false;\nmsg.payload= true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "ad189bfd1df748e0",
+                "ec8d966e6b740ab7",
+                "f40b844c3f45efdd",
+                "c7728f8a0ef90625"
+            ]
+        ]
+    },
+    {
+        "id": "82d579c286c2b4ae",
+        "type": "function",
+        "z": "6cc861eaf6547193",
+        "name": "caso 3",
+        "func": "msg.payload1 = \"caso 4\";\nmsg.payload= true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "ec8d966e6b740ab7",
+                "ad189bfd1df748e0",
+                "f40b844c3f45efdd",
+                "55af816d291dc93d"
+            ]
+        ]
+    },
+    {
+        "id": "7e12cafe9ca7cfa9",
+        "type": "function",
+        "z": "6cc861eaf6547193",
+        "name": "caso 4",
+        "func": "msg.payload1 = \"caso 5\";\nmsg.payload= true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 280,
+        "wires": [
+            [
+                "ad189bfd1df748e0",
+                "ec8d966e6b740ab7",
+                "f40b844c3f45efdd",
+                "b3fec59ab488f004"
+            ]
+        ]
+    },
+    {
+        "id": "7ad2987051a9f2b4",
+        "type": "function",
+        "z": "6cc861eaf6547193",
+        "name": "caso 5",
+        "func": "var apagarLed;\n\nflow.set(\"apagarLed\",false);\n\nmsg.payload1 = \"caso fin\";\nmsg.payload= true;\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 320,
+        "wires": [
+            [
+                "ad189bfd1df748e0",
+                "ec8d966e6b740ab7",
+                "f40b844c3f45efdd",
+                "7ce172b5d7f7f286",
+                "60bec5815ab40b8f"
+            ]
+        ]
+    },
+    {
+        "id": "148d13daa14fc064",
+        "type": "inject",
+        "z": "6cc861eaf6547193",
+        "name": "inData",
+        "props": [
+            {
+                "p": "payload1",
+                "v": "caso 1",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "676d72483d27da6f",
+        "type": "ui_led",
+        "z": "6cc861eaf6547193",
+        "order": 0,
+        "group": "931188c4fcf02977",
+        "width": 0,
+        "height": 0,
+        "label": "Caso 1",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": false,
+        "name": "Caso 1",
+        "x": 920,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c7728f8a0ef90625",
+        "type": "ui_led",
+        "z": "6cc861eaf6547193",
+        "order": 0,
+        "group": "931188c4fcf02977",
+        "width": 0,
+        "height": 0,
+        "label": "Caso 2",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": false,
+        "name": "Caso 2",
+        "x": 920,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "55af816d291dc93d",
+        "type": "ui_led",
+        "z": "6cc861eaf6547193",
+        "order": 0,
+        "group": "931188c4fcf02977",
+        "width": 0,
+        "height": 0,
+        "label": "Caso 3",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": false,
+        "name": "Caso 3",
+        "x": 920,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b3fec59ab488f004",
+        "type": "ui_led",
+        "z": "6cc861eaf6547193",
+        "order": 0,
+        "group": "931188c4fcf02977",
+        "width": 0,
+        "height": 0,
+        "label": "Caso 4",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": false,
+        "name": "Caso 4",
+        "x": 920,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7ce172b5d7f7f286",
+        "type": "ui_led",
+        "z": "6cc861eaf6547193",
+        "order": 0,
+        "group": "931188c4fcf02977",
+        "width": 0,
+        "height": 0,
+        "label": "Caso 5",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": false,
+        "name": "Caso 5",
+        "x": 920,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "980db0b9501f61ad",
+        "type": "delay",
+        "z": "6cc861eaf6547193",
+        "name": "1",
+        "pauseType": "queue",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 170,
+        "y": 340,
+        "wires": [
+            [
+                "177401c69504b42b"
+            ]
+        ]
+    },
+    {
+        "id": "11f5e19e6f8406e1",
+        "type": "function",
+        "z": "6cc861eaf6547193",
+        "name": "caso 5",
+        "func": "msg.payload=flow.get(\"apagarLed\");\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 480,
+        "wires": [
+            [
+                "e1279620b404da9c",
+                "676d72483d27da6f",
+                "c7728f8a0ef90625",
+                "55af816d291dc93d",
+                "b3fec59ab488f004",
+                "7ce172b5d7f7f286",
+                "f40b844c3f45efdd"
+            ]
+        ]
+    },
+    {
+        "id": "e1279620b404da9c",
+        "type": "debug",
+        "z": "6cc861eaf6547193",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f40b844c3f45efdd",
+        "type": "ui_text",
+        "z": "6cc861eaf6547193",
+        "group": "20612df8fb62aba8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Estado del Caso",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Gill Sans,Geneva,sans-serif",
+        "fontSize": "26",
+        "color": "#0670c1",
+        "x": 940,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "60bec5815ab40b8f",
+        "type": "delay",
+        "z": "6cc861eaf6547193",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "7",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 460,
+        "y": 400,
+        "wires": [
+            [
+                "11f5e19e6f8406e1"
+            ]
+        ]
+    },
+    {
+        "id": "d4c56538bba46603",
+        "type": "delay",
+        "z": "6cc861eaf6547193",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 160,
+        "wires": [
+            [
+                "ad189bfd1df748e0"
+            ]
+        ]
+    },
+    {
+        "id": "a717d88bab5dd809",
+        "type": "ui_button",
+        "z": "6cc861eaf6547193",
+        "name": "",
+        "group": "20612df8fb62aba8",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Activa Lectura",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "",
+        "topicType": "str",
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "863d121a59895f73"
+            ]
+        ]
+    },
+    {
+        "id": "863d121a59895f73",
+        "type": "function",
+        "z": "6cc861eaf6547193",
+        "name": "function 1",
+        "func": "if(msg.payload=== true ){\nmsg.payload1=\"caso 1\"\n\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "177401c69504b42b",
+                "ec8d966e6b740ab7"
+            ]
+        ]
+    }
+]
