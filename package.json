@@ -1,0 +1,21 @@
+{
+    "name": "Estacionamiento_TAQ",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "dependencies": {
+        "cn-dashboard-nodes": "0.0.2",
+        "node-red-contrib-moment": "5.0.0",
+        "node-red-contrib-ui-led": "0.4.11",
+        "node-red-dashboard": "3.6.2",
+        "node-red-node-mysql": "2.0.0",
+        "node-red-node-pi-gpio": "2.0.6",
+        "node-red-node-serialport": "2.0.2",
+        "node-red-node-ui-table": "0.4.3"
+    },
+    "node-red": {
+        "settings": {
+            "flowFile": "proyecto_Estacionamiento.json",
+            "credentialsFile": "proyecto_Estacionamiento_cred.json"
+        }
+    }
+}
