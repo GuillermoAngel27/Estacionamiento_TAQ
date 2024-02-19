@@ -11,7 +11,7 @@
         "id": "0af03d4e31f2356a",
         "type": "tab",
         "label": "flwEntradaParking",
-        "disabled": true,
+        "disabled": false,
         "info": "",
         "env": []
     },
@@ -29,14 +29,6 @@
         "label": "Flujo de Desencriptación",
         "disabled": false,
         "info": ""
-    },
-    {
-        "id": "245847e224bcacb2",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
     },
     {
         "id": "deb3af9ec25c469c",
@@ -1461,7 +1453,7 @@
                 "170ce437f56480b0"
             ],
             [
-                "b9dc12eab4950195"
+                "93c1182d7f70f77e"
             ],
             [
                 "3b87ccca8b6a24a0"
@@ -1533,14 +1525,14 @@
         "type": "function",
         "z": "0af03d4e31f2356a",
         "name": "caso 3_Valida_8seg",
-        "func": "\nvar loop2 = global.get(\"gblLoop2\");\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\n  if (loop2 === 1 && Date.now() - loop2ActivationTime >= 8000) {\n      msg.payload1 = \"caso 4\";\n  } else {\n      msg.payload = \"caso Cancelar\";\n  };\n\n // if (loop2== 1){\n    //msg.payload1 = \"caso 4\"\n  //}else{\n   // msg.payload1 = \"caso Cancelar\"\n//  };\n\nmsg.payload= true;\n\nreturn msg;\n",
+        "func": "\nvar loop2 = global.get(\"gblLoop2\");\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\n// Verificar si loop2 se leyó dentro del rango de 8 segundos\nif (loop2 === 1 && Date.now() - loop2ActivationTime < 8000) {\n  msg.payload1 = \"caso 4\";\n} else {\n  msg.payload1 = \"caso Cancelar\";\n}\n\n // if (loop2== 1){\n    //msg.payload1 = \"caso 4\"\n  //}else{\n   // msg.payload1 = \"caso Cancelar\"\n//  };\n\nmsg.payload= true;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
+        "x": 440,
         "y": 300,
         "wires": [
             [
@@ -1677,12 +1669,10 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 390,
-        "y": 300,
+        "x": 450,
+        "y": 260,
         "wires": [
-            [
-                "93c1182d7f70f77e"
-            ]
+            []
         ]
     },
     {
@@ -2497,7 +2487,7 @@
         "type": "function",
         "z": "0af03d4e31f2356a",
         "name": "fnCaso4_ValidaTiempo-Pluma",
-        "func": "var loop2 = global.get(\"gblLoop2\");\n\nif (loop2== 1){\n  msg.payload1 = \"caso 4\"\n}else{\n  msg.payload1 = \"caso 5\"\n}\n\nmsg.payload= true;\nreturn msg;",
+        "func": "var loop2 = global.get(\"gblLoop2\");\n\n//if (loop2== 1){\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\n// Verificar si loop2 se leyó dentro del rango de 8 segundos\nif (loop2 === 1 && Date.now() - loop2ActivationTime < 8000) {\n    msg.payload1 = \"caso 4\"\n}else{\n  msg.payload1 = \"caso 5\"\n}\n\nmsg.payload= true;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2818,428 +2808,6 @@
         "x": 900,
         "y": 360,
         "wires": []
-    },
-    {
-        "id": "1",
-        "type": "inject",
-        "z": "245847e224bcacb2",
-        "name": "Inicio",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 90,
-        "y": 120,
-        "wires": [
-            [
-                "2"
-            ]
-        ]
-    },
-    {
-        "id": "2",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "Check Button and Loop1",
-        "func": "var button = msg.payload.button;\nvar loop1 = msg.payload.loop1;\n\nif (button === 0 && loop1 === 1) {\n    return msg;\n} else {\n    return null;\n}",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 120,
-        "wires": [
-            [
-                "3"
-            ]
-        ]
-    },
-    {
-        "id": "3",
-        "type": "delay",
-        "z": "245847e224bcacb2",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "8",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 540,
-        "y": 120,
-        "wires": [
-            [
-                "4"
-            ]
-        ]
-    },
-    {
-        "id": "4",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "Check Loop2",
-        "func": "var loop2 = msg.payload.loop2;\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\nif (loop2 === 1 && Date.now() - loop2ActivationTime >= 8000) {\n    msg.payload = \"Abrir Barrera\";\n} else {\n    msg.payload = \"No Abrir Barrera\";\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 730,
-        "y": 120,
-        "wires": [
-            [
-                "5"
-            ]
-        ]
-    },
-    {
-        "id": "5",
-        "type": "debug",
-        "z": "245847e224bcacb2",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 950,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "6",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "Store Loop2 Activation Time",
-        "func": "var loop2ActivationTime = Date.now();\nflow.set('loop2ActivationTime', loop2ActivationTime);",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 340,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3b64f1972ece50eb",
-        "type": "switch",
-        "z": "245847e224bcacb2",
-        "name": "Switch Casos",
-        "property": "payload1",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "caso 1",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "caso 2",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "caso 3",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "caso 4",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "caso 5",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "caso Cancelar",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 6,
-        "x": 320,
-        "y": 820,
-        "wires": [
-            [
-                "eb9fb489c3a4bbf0"
-            ],
-            [
-                "10cfcc929f6e8449"
-            ],
-            [],
-            [
-                "2ae3d6990392bfa5"
-            ],
-            [
-                "07e3298dca808703"
-            ],
-            [
-                "31bac9f4c4766869"
-            ]
-        ]
-    },
-    {
-        "id": "5175df50557cd787",
-        "type": "link in",
-        "z": "245847e224bcacb2",
-        "name": "enlaceSwitchCase-In",
-        "links": [
-            "41f60769fbc48969",
-            "82b902f3984d2d1c",
-            "4cdfc13266c0d2d3",
-            "dcdd0583554f04fd",
-            "615a2757a973a4c7",
-            "83052fd32b6d80d3"
-        ],
-        "x": 505,
-        "y": 820,
-        "wires": [
-            [
-                "9f269a194d600e5d"
-            ]
-        ]
-    },
-    {
-        "id": "205374d1489b9b06",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "caso 3_Valida_8seg",
-        "func": "var loop2 = global.get(\"gblLoop2\");\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\nif (loop2 === 1 && Date.now() - loop2ActivationTime >= 8000) {\n    msg.payload1 = \"caso 4\";\n} else {\n    msg.payload1 = \"caso Cancelar\";\n};\n\nmsg.payload = true;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "Error: Request failed with status code 401",
-        "libs": [],
-        "x": 880,
-        "y": 800,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9f269a194d600e5d",
-        "type": "delay",
-        "z": "245847e224bcacb2",
-        "name": "8s",
-        "pauseType": "delayv",
-        "timeout": "8",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 630,
-        "y": 840,
-        "wires": [
-            [
-                "205374d1489b9b06"
-            ]
-        ]
-    },
-    {
-        "id": "31bac9f4c4766869",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "caso Cancelar",
-        "func": "var enProceso = false;\n\nglobal.set(\"gblenProceso\", enProceso);\nmsg.ticket = \"Ticket Cancelado\";\nmsg.payload1 = \"caso 5\";\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 580,
-        "y": 1060,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "140ac129a5f06469",
-        "type": "inject",
-        "z": "245847e224bcacb2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": ".5",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 310,
-        "y": 680,
-        "wires": [
-            [
-                "f0c7fc665d6310d0"
-            ]
-        ]
-    },
-    {
-        "id": "8783cff7c5448807",
-        "type": "inject",
-        "z": "245847e224bcacb2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 1080,
-        "wires": [
-            [
-                "31bac9f4c4766869"
-            ]
-        ]
-    },
-    {
-        "id": "10cfcc929f6e8449",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "fnCaso2_Valida_Inicio",
-        "func": "var enProceso = global.get(\"gblenProceso\");\n\nif (enProceso == true) {\n    msg.pluma = 5;\n    msg.payload = false;\n    msg.payload = true;\n    msg.payload1 = \"caso 3\";\n} else {\n    msg.payload1 = \"caso 4\";\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 600,
-        "y": 780,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f0c7fc665d6310d0",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "function 41",
-        "func": "var enProceso = global.get(\"gblenProceso\");\nvar boton = global.get(\"gblBoton\");\n\n// Verifica si ya hay un proceso en curso\nif (enProceso) {\n    // Ignora el nuevo evento de botón si ya hay un proceso en curso\n    return null;\n}\n\n// Inicia el proceso solo si no hay un proceso en curso\nif (boton == 1) {\n    var boton0 = 1;\n    msg.payload1 = \"caso fin\";\n    global.set(\"gblBoton\", boton0);\n    global.set(\"gblenProceso\", false);\n} else {\n    var boton0 = 0;\n    msg.payload1 = \"caso 1\";\n    global.set(\"gblBoton\", boton0);\n    // global.set(\"gblenProceso\", true);\n}\n\n// Marca que hay un proceso en curso\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 310,
-        "y": 740,
-        "wires": [
-            [
-                "3b64f1972ece50eb"
-            ]
-        ]
-    },
-    {
-        "id": "07e3298dca808703",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "fnCaso5_Fin",
-        "func": "var apagarLed;\n\nflow.set(\"apagarLed\", false);\nglobal.set(\"gblenProceso\", false);\nmsg.payload1 = \"caso fin\";\nmsg.payload = true;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 570,
-        "y": 980,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2ae3d6990392bfa5",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "fnCaso4_ValidaTiempo-Pluma",
-        "func": "var loop2 = global.get(\"gblLoop2\");\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\nif (loop2 == 1) {\n    if (Date.now() - loop2ActivationTime >= 8000) {\n        msg.payload1 = \"caso 4\";\n    } else {\n        msg.payload1 = \"caso Cancelar\";\n    }\n} else {\n    msg.payload1 = \"caso 5\";\n}\n\nmsg.payload = true;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 920,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "eb9fb489c3a4bbf0",
-        "type": "function",
-        "z": "245847e224bcacb2",
-        "name": "function 42",
-        "func": "var loop1 = global.get(\"gblLoop1\") || 0;\nvar loop2 = global.get(\"gblLoop2\") || 0;\nvar boton = global.get(\"gblBoton\") || 0;\nvar enProceso = global.get(\"gblenProceso\");\n\n// Verificar si hay un auto en loop1, no se ha oprimido el botón, no hay otro proceso en curso y loop2 no es igual a 1\nif (loop1 == 1 && boton == 0 && !enProceso && loop2 != 1) {\n    // Iniciar el proceso si no hay otro en curso y loop2 no es igual a 1\n    enProceso = true;\n    global.set(\"gblenProceso\", enProceso);\n    msg.payload1 = \"caso 2\"; // Iniciar el proceso\n} else if (enProceso && loop2 == 1) {\n    // Verificar si el auto ha pasado el loop2\n    msg.payload1 = \"caso 3\"; // El auto ha pasado la barrera\n} else if (enProceso && loop1 == 0) {\n    // Verificar si el auto ha salido de loop1 antes de pasar por loop2\n    msg.payload1 = \"caso Cancelar\"; // Cancelar el proceso\n    enProceso = false;\n    global.set(\"gblenProceso\", enProceso);\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 570,
-        "y": 700,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "585e554aea9b0a94",
@@ -4044,13 +3612,13 @@
         "y": 440,
         "wires": [
             [
-                "56132d984b56c046",
-                "a2f15e33f44169cb",
-                "d98d5a8fb5b357fd",
-                "9ebb0423715ce15b",
+                "b2b48c3057ef3dec",
                 "900506714faa665f",
                 "e184df76a658f4cd",
-                "b2b48c3057ef3dec",
+                "9ebb0423715ce15b",
+                "d98d5a8fb5b357fd",
+                "56132d984b56c046",
+                "a2f15e33f44169cb",
                 "7868e3efe285d95c"
             ]
         ]
