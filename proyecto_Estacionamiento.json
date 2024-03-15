@@ -49,7 +49,7 @@
         ],
         "out": [
             {
-                "x": 660,
+                "x": 640,
                 "y": 140,
                 "wires": [
                     {
@@ -270,16 +270,6 @@
         }
     },
     {
-        "id": "83b85919b2dac752",
-        "type": "MySQLdatabase",
-        "name": "",
-        "host": "192.168.1.72",
-        "port": "3306",
-        "db": "parkingtaq",
-        "tz": "",
-        "charset": "UTF8"
-    },
-    {
         "id": "802eaec04a393b82",
         "type": "ui_tab",
         "name": "EstacionamientoCompleto",
@@ -401,12 +391,23 @@
         "order": 3
     },
     {
+        "id": "907f8fcf39bfb2dd",
+        "type": "MySQLdatabase",
+        "z": "0cd476c06e8fa6b2",
+        "name": "db",
+        "host": "localhost",
+        "port": "3306",
+        "db": "parkingtaq",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
         "id": "6800462c10826a9c",
         "type": "mysql",
         "z": "0cd476c06e8fa6b2",
-        "mydb": "83b85919b2dac752",
+        "mydb": "907f8fcf39bfb2dd",
         "name": "",
-        "x": 510,
+        "x": 490,
         "y": 140,
         "wires": [
             []
@@ -815,7 +816,7 @@
         "type": "file",
         "z": "073bd379d194e673",
         "name": "Escribir en Archivo",
-        "filename": "/home/taq/Documentos/imprimeTicket/imprime.txt",
+        "filename": "C:\\imprimeWS\\imprime.txt",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
@@ -833,7 +834,7 @@
         "id": "05fbd4fb7b11f379",
         "type": "exec",
         "z": "073bd379d194e673",
-        "command": "lp /home/taq/Documentos/imprimeTicket/imprime.txt",
+        "command": "copy /B c:\\imprimeWS\\imprime.txt \\\\192.168.100.25\\EPSON",
         "addpay": false,
         "append": "",
         "useSpawn": "false",
@@ -867,6 +868,45 @@
             [
                 "650ea7edd08824aa"
             ]
+        ]
+    },
+    {
+        "id": "2b0aae63cc76dbdb",
+        "type": "file",
+        "z": "073bd379d194e673",
+        "name": "Escribir en Archivo",
+        "filename": "/home/taq/Documentos/imprimeTicket/imprime.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 170,
+        "y": 400,
+        "wires": [
+            [
+                "8fd752dcea62e3af"
+            ]
+        ]
+    },
+    {
+        "id": "8fd752dcea62e3af",
+        "type": "exec",
+        "z": "073bd379d194e673",
+        "command": "lp /home/taq/Documentos/imprimeTicket/imprime.txt",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "execImprime.bat",
+        "x": 400,
+        "y": 400,
+        "wires": [
+            [],
+            [],
+            []
         ]
     },
     {
@@ -1272,23 +1312,6 @@
         "wires": []
     },
     {
-        "id": "bdffcdddd141167f",
-        "type": "e-mail",
-        "z": "f369f98bb972f6f5",
-        "server": "smtp.gmail.com",
-        "port": "465",
-        "authtype": "BASIC",
-        "saslformat": true,
-        "token": "oauth2Response.access_token",
-        "secure": true,
-        "tls": true,
-        "name": "g.angel@taqro.com.mx",
-        "dname": "correo",
-        "x": 470,
-        "y": 800,
-        "wires": []
-    },
-    {
         "id": "5481d599838068a4",
         "type": "inject",
         "z": "f369f98bb972f6f5",
@@ -1310,7 +1333,7 @@
         "payload": "Ya a Comerciales!!!!",
         "payloadType": "str",
         "x": 210,
-        "y": 800,
+        "y": 580,
         "wires": [
             [
                 "bdffcdddd141167f"
@@ -1394,6 +1417,23 @@
         ]
     },
     {
+        "id": "bdffcdddd141167f",
+        "type": "e-mail",
+        "z": "f369f98bb972f6f5",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "g.angel@taqro.com.mx",
+        "dname": "correo",
+        "x": 550,
+        "y": 580,
+        "wires": []
+    },
+    {
         "id": "2a6bacecb6177f9b",
         "type": "switch",
         "z": "0af03d4e31f2356a",
@@ -1445,7 +1485,7 @@
                 "170ce437f56480b0"
             ],
             [
-                "93c1182d7f70f77e"
+                "b9dc12eab4950195"
             ],
             [
                 "3b87ccca8b6a24a0"
@@ -1484,7 +1524,7 @@
             "4fcfa5498ffc3e4a"
         ],
         "x": 75,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "06d6c6ed95abae23"
@@ -1508,7 +1548,7 @@
             "3f632ec229bd99da",
             "5175df50557cd787"
         ],
-        "x": 695,
+        "x": 715,
         "y": 140,
         "wires": []
     },
@@ -1517,14 +1557,14 @@
         "type": "function",
         "z": "0af03d4e31f2356a",
         "name": "caso 3_Valida_8seg",
-        "func": "\nvar loop2 = global.get(\"gblLoop2\");\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\n// Verificar si loop2 se leyó dentro del rango de 8 segundos\nif (loop2 === 1 && Date.now() - loop2ActivationTime < 8000) {\n  msg.payload1 = \"caso 4\";\n} else {\n  msg.payload1 = \"caso Cancelar\";\n}\n\n // if (loop2== 1){\n    //msg.payload1 = \"caso 4\"\n  //}else{\n   // msg.payload1 = \"caso Cancelar\"\n//  };\n\nmsg.payload= true;\n\nreturn msg;\n",
+        "func": "\nvar loop2 = global.get(\"gblLoop2\");\nvar blProcess = global.get(\"gblenProceso\");\n\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\n// Verificar si loop2 se leyó dentro del rango de 8 segundos\n//if (loop2 === 1 && Date.now() - loop2ActivationTime < 8000) {\n  //msg.payload1 = \"caso 4\";\n//} else {\n  //msg.payload1 = \"caso Cancelar\";\n//}\n\n  if (loop2== 1 && blProcess==true){\n      msg.payload1 = \"caso 4\"\n  }else{\n      msg.payload1 = \"caso Cancelar\"\n  };\n\nmsg.payload= true;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
+        "x": 560,
         "y": 300,
         "wires": [
             [
@@ -1549,7 +1589,7 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 150,
+        "x": 170,
         "y": 380,
         "wires": [
             [
@@ -1576,7 +1616,7 @@
             "3f632ec229bd99da",
             "5175df50557cd787"
         ],
-        "x": 695,
+        "x": 715,
         "y": 200,
         "wires": []
     },
@@ -1599,7 +1639,7 @@
             "5175df50557cd787"
         ],
         "x": 695,
-        "y": 420,
+        "y": 440,
         "wires": []
     },
     {
@@ -1619,7 +1659,7 @@
             "3f632ec229bd99da",
             "5175df50557cd787"
         ],
-        "x": 695,
+        "x": 705,
         "y": 300,
         "wires": []
     },
@@ -1641,7 +1681,7 @@
             "5175df50557cd787"
         ],
         "x": 695,
-        "y": 360,
+        "y": 380,
         "wires": []
     },
     {
@@ -1661,10 +1701,12 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 450,
-        "y": 260,
+        "x": 390,
+        "y": 300,
         "wires": [
-            []
+            [
+                "93c1182d7f70f77e"
+            ]
         ]
     },
     {
@@ -1680,7 +1722,7 @@
         "finalize": "",
         "libs": [],
         "x": 420,
-        "y": 540,
+        "y": 560,
         "wires": [
             [
                 "83052fd32b6d80d3"
@@ -1704,7 +1746,7 @@
             "5175df50557cd787"
         ],
         "x": 695,
-        "y": 540,
+        "y": 560,
         "wires": []
     },
     {
@@ -1724,8 +1766,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1220,
-        "y": 320,
+        "x": 1280,
+        "y": 340,
         "wires": []
     },
     {
@@ -1744,6 +1786,7 @@
         "y": 240,
         "wires": [
             [
+                "df54a257080543df",
                 "8ecedced6f934409"
             ]
         ]
@@ -1753,7 +1796,7 @@
         "type": "subflow:073bd379d194e673",
         "z": "0af03d4e31f2356a",
         "name": "",
-        "x": 800,
+        "x": 820,
         "y": 240,
         "wires": [
             [
@@ -1825,8 +1868,8 @@
         "font": "Gill Sans,Geneva,sans-serif",
         "fontSize": "26",
         "color": "#0670c1",
-        "x": 1240,
-        "y": 360,
+        "x": 1300,
+        "y": 380,
         "wires": []
     },
     {
@@ -1862,8 +1905,8 @@
             "83052fd32b6d80d3",
             "a96dd489bfaf6c56"
         ],
-        "x": 1095,
-        "y": 360,
+        "x": 1155,
+        "y": 380,
         "wires": [
             [
                 "81c0563a664c91e3"
@@ -1897,8 +1940,8 @@
         "shape": "circle",
         "showGlow": false,
         "name": "Caso 1",
-        "x": 1220,
-        "y": 540,
+        "x": 1280,
+        "y": 560,
         "wires": []
     },
     {
@@ -1928,8 +1971,8 @@
         "shape": "circle",
         "showGlow": false,
         "name": "Caso 2",
-        "x": 1220,
-        "y": 580,
+        "x": 1280,
+        "y": 600,
         "wires": []
     },
     {
@@ -1959,8 +2002,8 @@
         "shape": "circle",
         "showGlow": false,
         "name": "Caso 3",
-        "x": 1220,
-        "y": 620,
+        "x": 1280,
+        "y": 640,
         "wires": []
     },
     {
@@ -1990,8 +2033,8 @@
         "shape": "circle",
         "showGlow": false,
         "name": "Caso 4",
-        "x": 1220,
-        "y": 660,
+        "x": 1280,
+        "y": 680,
         "wires": []
     },
     {
@@ -2021,8 +2064,8 @@
         "shape": "circle",
         "showGlow": false,
         "name": "Caso 5",
-        "x": 1220,
-        "y": 700,
+        "x": 1280,
+        "y": 720,
         "wires": []
     },
     {
@@ -2037,8 +2080,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 520,
+        "x": 910,
+        "y": 540,
         "wires": [
             [
                 "c1d4c547aa5fb1a0",
@@ -2065,8 +2108,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1230,
-        "y": 400,
+        "x": 1290,
+        "y": 420,
         "wires": []
     },
     {
@@ -2079,8 +2122,8 @@
             "4c9b7e64254da9ef",
             "9537f5d6b1b1b458"
         ],
-        "x": 1095,
-        "y": 400,
+        "x": 1155,
+        "y": 420,
         "wires": []
     },
     {
@@ -2094,8 +2137,8 @@
             "934376c363c717d6",
             "4cdfc13266c0d2d3"
         ],
-        "x": 1095,
-        "y": 540,
+        "x": 1155,
+        "y": 560,
         "wires": [
             [
                 "d31de3d6b1af26aa"
@@ -2113,8 +2156,8 @@
             "ce85e71ee99bcfe8",
             "dcdd0583554f04fd"
         ],
-        "x": 1095,
-        "y": 660,
+        "x": 1155,
+        "y": 680,
         "wires": [
             [
                 "553f4fa25d159c4c"
@@ -2132,8 +2175,8 @@
             "e5052ce85bfc9b77",
             "41f60769fbc48969"
         ],
-        "x": 1095,
-        "y": 620,
+        "x": 1155,
+        "y": 640,
         "wires": [
             [
                 "876691e542a3f0ce"
@@ -2151,8 +2194,8 @@
             "a13e2df9621d3492",
             "615a2757a973a4c7"
         ],
-        "x": 1095,
-        "y": 580,
+        "x": 1155,
+        "y": 600,
         "wires": [
             [
                 "7d9895b3cf05d2ba"
@@ -2170,8 +2213,8 @@
             "b95c969609504701",
             "82b902f3984d2d1c"
         ],
-        "x": 1095,
-        "y": 700,
+        "x": 1155,
+        "y": 720,
         "wires": [
             [
                 "af1524f86af9a815"
@@ -2202,8 +2245,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1210,
-        "y": 500,
+        "x": 1270,
+        "y": 520,
         "wires": []
     },
     {
@@ -2218,8 +2261,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1220,
-        "y": 440,
+        "x": 1280,
+        "y": 460,
         "wires": [
             [
                 "c65e9d9f879f51a8"
@@ -2237,8 +2280,8 @@
             "a13e2df9621d3492",
             "615a2757a973a4c7"
         ],
-        "x": 1095,
-        "y": 500,
+        "x": 1155,
+        "y": 520,
         "wires": [
             [
                 "c65e9d9f879f51a8"
@@ -2304,7 +2347,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1120,
+        "x": 1080,
         "y": 40,
         "wires": [
             []
@@ -2318,10 +2361,6 @@
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": ".5",
@@ -2361,7 +2400,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 160,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "92dacd786a20fc8c"
@@ -2386,7 +2425,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 740,
-        "y": 460,
+        "y": 480,
         "wires": [
             [
                 "0f545c3ed0b5afcc"
@@ -2405,8 +2444,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
-        "y": 80,
+        "x": 610,
+        "y": 40,
         "wires": [
             []
         ]
@@ -2416,7 +2455,7 @@
         "type": "function",
         "z": "0af03d4e31f2356a",
         "name": "fnCaso2_Valida_Inicio",
-        "func": "var enProceso = global.get(\"gblenProceso\");\n\n  if (enProceso == true){\n    msg.pluma = 5;\n    msg.payload= false;\n    msg.payload= true;\n    msg.payload1 = \"caso 3\";\n  }else{\n    msg.payload1=\"caso 4\";\n  };\n\nreturn msg;",
+        "func": "var enProceso = global.get(\"gblenProceso\");\n\n  if (enProceso == true){\n      msg.pluma = 5;\n      msg.payload= false;\n      msg.payload= true;\n      msg.payload1 = \"caso 3\";\n  }else{\n      msg.payload1=\"caso 4\";\n  };\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2427,7 +2466,7 @@
         "y": 220,
         "wires": [
             [
-                "615a2757a973a4c7",
+                "5afba55ba3a54e89",
                 "9b9112bb10c4a8f9"
             ]
         ]
@@ -2466,7 +2505,7 @@
         "finalize": "",
         "libs": [],
         "x": 410,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "82b902f3984d2d1c",
@@ -2479,7 +2518,7 @@
         "type": "function",
         "z": "0af03d4e31f2356a",
         "name": "fnCaso4_ValidaTiempo-Pluma",
-        "func": "var loop2 = global.get(\"gblLoop2\");\n\n//if (loop2== 1){\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\n// Verificar si loop2 se leyó dentro del rango de 8 segundos\nif (loop2 === 1 && Date.now() - loop2ActivationTime < 8000) {\n    msg.payload1 = \"caso 4\"\n}else{\n  msg.payload1 = \"caso 5\"\n}\n\nmsg.payload= true;\nreturn msg;",
+        "func": "var loop2 = global.get(\"gblLoop2\");\nvar loop2ActivationTime = flow.get('loop2ActivationTime') || 0;\n\nif (loop2== 1){\n\n// Verificar si loop2 se leyó dentro del rango de 8 segundos\n//if (loop2 === 1 && Date.now() - loop2ActivationTime < 8000) {\n    msg.payload1 = \"caso 4\"\n}else{\n  msg.payload1 = \"caso 5\"\n}\n\nmsg.payload= true;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2487,7 +2526,7 @@
         "finalize": "",
         "libs": [],
         "x": 470,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "dcdd0583554f04fd"
@@ -2499,7 +2538,7 @@
         "type": "function",
         "z": "0af03d4e31f2356a",
         "name": "function 42",
-        "func": "var loop1 = global.get(\"gblLoop1\") || 0;\nvar loop2 = global.get(\"gblLoop2\") || 0;\nvar boton = global.get(\"gblBoton\") || 0;\nvar enProceso = global.get(\"gblenProceso\");\n\n// Verificar si hay un auto en loop1, no se ha oprimido el botón, no hay otro proceso en curso y loop2 no es igual a 1\nif (loop1 == 1 && boton == 0 && !enProceso && loop2 != 1) {\n    // Iniciar el proceso si no hay otro en curso y loop2 no es igual a 1\n    enProceso = true;\n    global.set(\"gblenProceso\", enProceso);\n    msg.payload1 = \"caso 2\"; // Iniciar el proceso\n} else if (enProceso && loop2 == 1) {\n    // Verificar si el auto ha pasado el loop2\n    msg.payload1 = \"caso 3\"; // El auto ha pasado la barrera\n} else if (enProceso && loop1 == 0) {\n    // Verificar si el auto ha salido de loop1 antes de pasar por loop2\n    msg.payload1 = \"caso Cancelar\"; // Cancelar el proceso\n    enProceso = false;\n    global.set(\"gblenProceso\", enProceso);\n}\n\nreturn msg;\n",
+        "func": "var loop1 = global.get(\"gblLoop1\") || 0;\nvar loop2 = global.get(\"gblLoop2\") || 0;\nvar boton = global.get(\"gblBoton\") || 0;\nvar enProceso = global.get(\"gblenProceso\");\n\n// Verificar si hay un auto en loop1, no se ha oprimido el botón, no hay otro proceso en curso y loop2 no es igual a 1\nif (loop1 == 1 && boton == 0 && !enProceso && loop2 != 1) {\n    // Iniciar el proceso si no hay otro en curso y loop2 no es igual a 1\n    enProceso = true;\n    global.set(\"gblenProceso\", enProceso);\n    msg.payload1 = \"caso 2\"; // Iniciar el proceso\n} else if (enProceso && loop2 == 1) {\n    // Verificar si el auto ha pasado el loop2\n    msg.payload1 = \"caso 3\"; // El auto ha pasado la barrera\n} else if (enProceso && loop1 == 0) {\n    // Verificar si el auto ha salido de loop1 antes de pasar por loop2\n    msg.payload1 = \"caso Cancelar\"; // Cancelar el proceso\n    enProceso = false;\n    global.set(\"gblenProceso\", enProceso);\n}\nmsg.payload=true;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2524,8 +2563,8 @@
             "83052fd32b6d80d3",
             "82b902f3984d2d1c"
         ],
-        "x": 1095,
-        "y": 320,
+        "x": 1155,
+        "y": 340,
         "wires": [
             [
                 "ce79501f9c0d0cbd"
@@ -2541,9 +2580,290 @@
         "links": [
             "57fdd6a78f2d4823"
         ],
-        "x": 1295,
+        "x": 1375,
         "y": 240,
         "wires": []
+    },
+    {
+        "id": "5afba55ba3a54e89",
+        "type": "delay",
+        "z": "0af03d4e31f2356a",
+        "name": "3s",
+        "pauseType": "delayv",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 200,
+        "wires": [
+            [
+                "615a2757a973a4c7"
+            ]
+        ]
+    },
+    {
+        "id": "d8089815f9078541",
+        "type": "function",
+        "z": "0af03d4e31f2356a",
+        "name": "function 43",
+        "func": "// Inicializar la variable global\nglobal.set(\"gblBoton\", 1);\nglobal.set(\"gblLoop1\", 1);\nglobal.set(\"gblLoop2\", 1);\nglobal.set(\"gblenProceso\", false);\n\n// Continuar con el flujo\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "7d0b13d010a471ba"
+            ]
+        ]
+    },
+    {
+        "id": "df54a257080543df",
+        "type": "debug",
+        "z": "0af03d4e31f2356a",
+        "name": "debug 50",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "ticket",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c518cd3d.b6f2e8",
+        "type": "inject",
+        "z": "a74a8b3a13ece5db",
+        "name": "Loop1",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "start",
+        "payloadType": "str",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "c28d3ef2.d1a3e"
+            ]
+        ]
+    },
+    {
+        "id": "c28d3ef2.d1a3e",
+        "type": "delay",
+        "z": "a74a8b3a13ece5db",
+        "name": "Esperar 8 segundos",
+        "pauseType": "delay",
+        "timeout": "8",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "41f636cd.d779e4"
+            ]
+        ]
+    },
+    {
+        "id": "41f636cd.d779e4",
+        "type": "switch",
+        "z": "a74a8b3a13ece5db",
+        "name": "Loop2",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "start",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 120,
+        "wires": [
+            [
+                "d5f85da2.c25328"
+            ]
+        ]
+    },
+    {
+        "id": "d5f85da2.c25328",
+        "type": "function",
+        "z": "a74a8b3a13ece5db",
+        "name": "Tomar Lectura",
+        "func": "var valorAleatorio = Math.floor(Math.random() * 2) === 0;\nmsg.payload = valorAleatorio;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 120,
+        "wires": [
+            [
+                "c2eb32e7.3071e8"
+            ]
+        ]
+    },
+    {
+        "id": "c2eb32e7.3071e8",
+        "type": "debug",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1010,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "47122c35.9c5f84",
+        "type": "inject",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "Test",
+        "payload": "status",
+        "payloadType": "str",
+        "x": 283.5,
+        "y": 290,
+        "wires": [
+            [
+                "8f31665a.668f48"
+            ]
+        ]
+    },
+    {
+        "id": "2e628a77.cc2d76",
+        "type": "debug",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 735.5,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "de2b47a8.eb6b08",
+        "type": "inject",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "Test",
+        "payload": "events",
+        "payloadType": "str",
+        "x": 276.5,
+        "y": 328,
+        "wires": [
+            [
+                "8f31665a.668f48"
+            ]
+        ]
+    },
+    {
+        "id": "70fc817d.84b88",
+        "type": "inject",
+        "z": "a74a8b3a13ece5db",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "Test",
+        "payload": "statusJson",
+        "payloadType": "str",
+        "x": 270.5,
+        "y": 364,
+        "wires": [
+            [
+                "8f31665a.668f48"
+            ]
+        ]
+    },
+    {
+        "id": "8f31665a.668f48",
+        "type": "apcrequest",
+        "z": "a74a8b3a13ece5db",
+        "d": true,
+        "name": "apc",
+        "server": "",
+        "x": 530,
+        "y": 320,
+        "wires": [
+            [
+                "2e628a77.cc2d76"
+            ]
+        ]
     },
     {
         "id": "054ce465507e0b73",
@@ -2693,6 +3013,7 @@
         "id": "2d8b4c29f6cfe335",
         "type": "serial in",
         "z": "f529c53e9a5aba38",
+        "d": true,
         "name": "USB0",
         "serial": "47dc53baf2c4b5e4",
         "x": 90,
