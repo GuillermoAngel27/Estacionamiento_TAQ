@@ -96,7 +96,7 @@
                 "y": 140,
                 "wires": [
                     {
-                        "id": "df3c07c1637895cc"
+                        "id": "08a775654c9d6588"
                     }
                 ]
             }
@@ -395,7 +395,7 @@
         "type": "MySQLdatabase",
         "z": "0cd476c06e8fa6b2",
         "name": "db",
-        "host": "localhost",
+        "host": "127.0.0.1",
         "port": "3306",
         "db": "parkingtaq",
         "tz": "",
@@ -510,14 +510,14 @@
         "type": "function",
         "z": "812ebe6f38e1a602",
         "name": "fnBuscaDatosEmpresa",
-        "func": "const now = new Date();\n\n// Formatear la fecha y hora en el formato de MySQL\nconst formattedDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;\n\n\nmsg.topic = `select * from datempre`;\nreturn msg;\n\n",
+        "func": "msg.topic = `select * from datempre`;\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
+        "x": 320,
         "y": 160,
         "wires": [
             [
@@ -543,12 +543,10 @@
         "type": "subflow:0cd476c06e8fa6b2",
         "z": "812ebe6f38e1a602",
         "name": "",
-        "x": 450,
-        "y": 160,
+        "x": 430,
+        "y": 100,
         "wires": [
-            [
-                "08a775654c9d6588"
-            ]
+            []
         ]
     },
     {
@@ -564,7 +562,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 160,
+        "y": 100,
         "wires": [
             [
                 "2c969e4bc7ba4e37"
@@ -583,12 +581,10 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 200,
+        "x": 480,
+        "y": 260,
         "wires": [
-            [
-                "7a3dd22e952ff033"
-            ]
+            []
         ]
     },
     {
@@ -596,7 +592,7 @@
         "type": "subflow:0cd476c06e8fa6b2",
         "z": "812ebe6f38e1a602",
         "name": "",
-        "x": 670,
+        "x": 530,
         "y": 200,
         "wires": [
             []
@@ -618,7 +614,7 @@
         "y": 200,
         "wires": [
             [
-                "b2d56863693fbf37"
+                "7a3dd22e952ff033"
             ]
         ]
     },
@@ -642,6 +638,7 @@
         "name": "fnInsertarFolio",
         "func": "const now = new Date();\n\n// Formatear la fecha y hora en el formato de MySQL\nconst formattedDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;\n\n\nmsg.topic = `INSERT INTO folios_est (fecha_ingreso,fecha_fin,dias_est,costo,tipo_folio) \n VALUES ('${formattedDate}','1901-01-01 23:59:59',0,0,'NORMAL');`;\nreturn msg;\n\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -705,7 +702,7 @@
         "type": "function",
         "z": "073bd379d194e673",
         "name": "fnDeclaraVarGlobales",
-        "func": "var numFolio = msg.payload && msg.payload[0] && msg.payload[0].folio;\nvar str_Fecha = msg.payload && msg.payload[0] && msg.payload[0].fecha_ingreso;\n\nglobal.set(\"gblnumFolio\",numFolio);\nglobal.set(\"gblfecha_ingreso\",str_Fecha);\n\nmsg.topic = 'Entrada 1: Se creo el folio ' + global.get(\"gblnumFolio\")\nmsg.folio =  global.get(\"gblnumFolio\")\n\nreturn msg;",
+        "func": "var numFolio = msg.payload && msg.payload[0] && msg.payload[0].folio;\nvar str_Fecha = msg.payload && msg.payload[0] && msg.payload[0].fecha_ingreso;\n\nglobal.set(\"gblnumFolio\",numFolio);\nglobal.set(\"gblfecha_ingreso\",str_Fecha);\n\n\nmsg.folio =  global.get(\"gblnumFolio\")\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -816,10 +813,10 @@
         "type": "file",
         "z": "073bd379d194e673",
         "name": "Escribir en Archivo",
-        "filename": "C:\\imprimeWS\\imprime.txt",
+        "filename": "C:\\Users\\G-Angel\\Documents\\imprimeWS\\imprime.txt",
         "filenameType": "str",
         "appendNewline": true,
-        "createDir": false,
+        "createDir": true,
         "overwriteFile": "true",
         "encoding": "none",
         "x": 170,
@@ -1786,7 +1783,8 @@
         "y": 240,
         "wires": [
             [
-                "df54a257080543df"
+                "df54a257080543df",
+                "8ecedced6f934409"
             ]
         ]
     },
@@ -1795,8 +1793,8 @@
         "type": "subflow:073bd379d194e673",
         "z": "0af03d4e31f2356a",
         "name": "",
-        "x": 900,
-        "y": 300,
+        "x": 820,
+        "y": 240,
         "wires": [
             [
                 "dcdd0008e9d2dece"
@@ -2465,7 +2463,8 @@
         "y": 220,
         "wires": [
             [
-                "5afba55ba3a54e89"
+                "5afba55ba3a54e89",
+                "9b9112bb10c4a8f9"
             ]
         ]
     },
@@ -2624,35 +2623,6 @@
         "wires": [
             [
                 "7d0b13d010a471ba"
-            ]
-        ]
-    },
-    {
-        "id": "fa96a925e1949bd2",
-        "type": "inject",
-        "z": "0af03d4e31f2356a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 740,
-        "y": 240,
-        "wires": [
-            [
-                "9b9112bb10c4a8f9"
             ]
         ]
     },
