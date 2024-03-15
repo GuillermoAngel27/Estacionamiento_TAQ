@@ -623,8 +623,8 @@
         "type": "subflow:0cd476c06e8fa6b2",
         "z": "073bd379d194e673",
         "name": "",
-        "x": 410,
-        "y": 120,
+        "x": 370,
+        "y": 60,
         "wires": [
             [
                 "bd24e4d038fa615f"
@@ -831,7 +831,7 @@
         "id": "05fbd4fb7b11f379",
         "type": "exec",
         "z": "073bd379d194e673",
-        "command": "copy /B c:\\imprimeWS\\imprime.txt \\\\192.168.100.25\\EPSON",
+        "command": "copy /B c:\\imprimeWS\\imprime.txt \\\\192.168.1.70\\EPSON",
         "addpay": false,
         "append": "",
         "useSpawn": "false",
@@ -860,7 +860,7 @@
         "finalize": "",
         "libs": [],
         "x": 210,
-        "y": 120,
+        "y": 60,
         "wires": [
             [
                 "650ea7edd08824aa"
@@ -1417,6 +1417,7 @@
         "id": "bdffcdddd141167f",
         "type": "e-mail",
         "z": "f369f98bb972f6f5",
+        "d": true,
         "server": "smtp.gmail.com",
         "port": "465",
         "authtype": "BASIC",
@@ -2917,6 +2918,7 @@
         "id": "028f74a0e58df18d",
         "type": "subflow:0cd476c06e8fa6b2",
         "z": "f529c53e9a5aba38",
+        "d": true,
         "name": "",
         "x": 670,
         "y": 220,
@@ -3047,6 +3049,7 @@
         "id": "7bda4ac316532683",
         "type": "subflow:0cd476c06e8fa6b2",
         "z": "f529c53e9a5aba38",
+        "d": true,
         "name": "",
         "x": 510,
         "y": 500,
